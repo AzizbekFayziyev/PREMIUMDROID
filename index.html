@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PREMIUMDROID</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-icon" content="/logo.png">
+  <meta name="description" content="Free premium, mod games and apps for android!" />
+  <meta name="keywords"
+    content="premium games for android, premium apps for android, premiumdroid, vzlom apps for android, vzlom games for android, android games, mod games for android, mod apps for android, happymod, standoff 2, brawl stars, capcut, terraria, pubg, gta v android" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PREMIUMDROID" />
+  <meta property="og:description" content="Free premium, mod games and apps for android!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/logo.png" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3134849935987867"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="root">
+  </div>
+  <noscript>You need enable javascript in your browser to run this app!</noscript>
+  <script type="module" src="/src/main.jsx"></script>
+  <!-- Google Analystics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7HGT17ZRG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M7HGT17ZRG');
+  </script>
+  <!-- ajax -->
+  <script src="/ajax.js"></script>
+  <!-- pwa -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        }).catch(function (err) {
+          console.log(err)
+        });
+      });
+    } else {
+      console.log('service worker is not supported');
+    }
+  </script>
+</body>
+
+</html>

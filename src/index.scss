@@ -1,0 +1,392 @@
+// Global styles
+$color-white: #ffffff;
+$color-black: #333333;
+$color-black-50: #21252b;
+$radial-graient: radial-gradient(55% 57.61% at 56.6% 39.68%, rgba(255, 0, 0, 0) 0%, #161c23 100%);
+$text-shadow: 0 -1px 0 #fff, 0 1px 0 #00BF63, 0 2px 0 #00BF63, 0 3px 0 #00BF63, 0 4px 0 #00BF63;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  top: 0px !important;
+}
+
+html,
+body {
+  top: 0 !important;
+  overflow-x: hidden;
+  background: #000000;
+}
+
+#disqus_thread {
+  position: relative;
+  overflow: hidden;
+
+  iframe {
+    margin-bottom: -54px;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #555;
+}
+
+.textScrollBar {
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+}
+
+
+// Navbar
+.navbar {
+  background: #00000022;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  &__logo {
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      transition: 0.3s ease-in-out;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $color-white;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+
+  &__btn {
+
+    &:hover,
+    &.active {
+      .navbar__link {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.navbar-menu {
+  &__link {
+    text-shadow: $text-shadow;
+  }
+
+  &>.MuiPaper-root {
+    background: #000000 !important;
+  }
+}
+
+// Home page
+.home-slider {
+  overflow: hidden;
+  width: 100%;
+
+  &__title {
+    text-shadow: $text-shadow;
+  }
+
+  .slick-prev {
+    z-index: 2;
+    transform: translate(30px) scale(1.2) translateY(-35px);
+  }
+
+  .slick-next {
+    z-index: 2;
+    transform: translate(-30px) scale(1.2) translateY(-35px);
+  }
+
+  .slick-dots {
+    margin-bottom: 30px !important;
+
+    li {
+      button {
+        &:before {
+          transform: scale(1.5);
+          color: $color-white;
+        }
+      }
+
+      &.slick-active {
+        button {
+          transform: scale(1.5);
+
+          &:before {
+            color: $color-white;
+          }
+        }
+      }
+    }
+
+  }
+
+  div {
+    .home-slider__slide {
+      padding: 80px 0;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: $radial-graient;
+      position: relative;
+      width: 100vw !important;
+      height: 70vh;
+
+      img {
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+  }
+
+}
+
+// Product page
+.product-bg {
+  &::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $radial-graient;
+  }
+
+  &__logo {
+    width: 150px;
+    height: 145px;
+    margin-right: 20px;
+    border-radius: 7px;
+  }
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "FREE";
+    color: $color-white;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    top: 5px;
+    right: -20px;
+    transform: rotate(30deg);
+    z-index: 2;
+    position: absolute;
+    background: linear-gradient(to right, #08ffb1, #d710ff, #f7bf07);
+    padding: 5px;
+    width: 110px;
+  }
+}
+
+// Apps page
+.apps-header {
+  position: relative;
+  height: 70vh;
+  background: $color-black;
+  width: 100%;
+  border-bottom: 1px dotted $color-white;
+  margin-bottom: -95px;
+
+  &__text {
+    text-shadow: $text-shadow;
+  }
+
+  img,
+  video {
+    filter: brightness(60%);
+    object-fit: cover;
+    position: absolute;
+    object-position: top;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Categories page
+.online-games {
+  overflow: hidden;
+  transition: 0.3s;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  padding: 200px 5px;
+  text-align: center;
+  margin: 30px auto;
+  background: $color-black;
+
+  &:hover {
+    img {
+      animation: none;
+    }
+  }
+
+  img {
+    animation: grayscale 2s linear infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  h1 {
+    text-shadow: $text-shadow;
+  }
+}
+
+@keyframes grayscale {
+
+  0%,
+  100% {
+    filter: grayscale(0%);
+  }
+
+  50% {
+    filter: grayscale(100%);
+  }
+}
+
+
+// Footer
+footer {
+  position: relative;
+  text-align: center;
+  padding: 18px 5px;
+  background: $color-black-50;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.custom-shape-divider-top-1676986455 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1676986455 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 174px;
+}
+
+
+// Responsive
+@media(max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .product-bg {
+    &__logo {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  div .home-slider__slide {
+    justify-content: center !important;
+  }
+
+  .home-slider {
+    .slick-arrow {
+      display: none !important;
+    }
+
+    .home-slider__slide {
+      height: 350px !important;
+    }
+  }
+
+  .online-games {
+    margin: 40px auto;
+    padding: 100px 5px;
+  }
+
+  .apps-header {
+    height: 300px;
+  }
+
+  #disqus_thread {
+    position: relative;
+    overflow: hidden;
+
+    iframe {
+      margin-bottom: -84px;
+    }
+  }
+}
+
+@media(max-width: 280px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media(max-height: 450px) {
+  .home-slider__slide {
+    height: 100vh !important;
+  }
+}
+
+@media all and (display-mode: standalone) {
+  .installBtn {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
